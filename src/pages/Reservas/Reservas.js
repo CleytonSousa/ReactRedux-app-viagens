@@ -2,7 +2,7 @@ import React from 'react'
 import { Container } from './reservasStyle'
 import { MdDelete, MdAddCircle, MdRemoveCircle} from 'react-icons/md'
 import { useSelector, useDispatch } from 'react-redux'
-import { removeReserve, updateAmountReserve } from '../../store/modules/reserve/actions'
+import { removeReserve, updateAmountRequest } from '../../store/modules/reserve/actions'
 
 const Reservas = () => {
     const reserves = useSelector(state => state.reserve)
@@ -13,11 +13,11 @@ const Reservas = () => {
     }
 
     const decrementAmount = (trips) => {
-        dispatch(updateAmountReserve(trips.id, trips.amount - 1))
+        dispatch(updateAmountRequest(trips.id, trips.amount - 1))
     }
 
     const incrementAmount = (trips) => {
-        dispatch(updateAmountReserve(trips.id, trips.amount + 1))
+        dispatch(updateAmountRequest(trips.id, trips.amount + 1))
     }
 
     return (
